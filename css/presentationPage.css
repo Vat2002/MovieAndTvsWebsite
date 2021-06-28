@@ -1,20 +1,38 @@
-body{
-	background-color: #008CBA;
-	opacity: 1;
+#overlay {
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,1);
+	z-index: 2;
+	cursor: pointer;
+	transition: .4s ease;
+	color:white;
 }
+
 .position{
 	padding:10px;
 	text-align:center;
-	opacity: 1;
-}	
-.positionchange{
-	padding:10px;
-	text-align:center;
-	opacity: 0;
-	transition: .4s ease;
-	
 }
-h2{
+
+#title{
 	text-align:center;
 	margin-top: 20%;
+}
+
+.box{
+	background-color:white;
+	color:black;
+	font-size:22px;
+	transition: .4s ease;
+}
+
+.boxremove{
+	background-color:black;
+	color:white;
+	transition: .4s ease;
 }
