@@ -1,4 +1,5 @@
-const names=["name1","name2","name3","name4"];
+const names=["ND Kooragamage","M.A  Zahir","N.V.V De Dilva","P.R.A.U Pallemulla"];
+var srtNames="";
 names.forEach(printNames);
 function printNames(val,index){
 	srtNames+="<h4 id=\"name"+ index+"\">"+val+"</h4>";
