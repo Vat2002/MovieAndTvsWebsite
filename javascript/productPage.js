@@ -1,4 +1,4 @@
-
+//product name,price,relesed date,discription,image location
 const productList=[
 	["name1",23,"23/10/2020","ksdgkjagsdkhfgakyusgdckjvasdyugakjsdgfk","images/thumbnail/imag1.png"],
 	["name2",24,"15/10/2020","ksdgkjkfkfkagsdkhfgakyusgdckjvasdyugakjsdgfk",""],
@@ -14,6 +14,7 @@ const productList=[
 	["name5",12,"25/09/2013","ksdgkjkfkfkagsdkhfgakyusgdckjvasdyugakjsdgfk",""]
 ];
 
+//dislay products
 var displayProduct="";
 for (let i=0;i<productList.length;i++){
 	var name=productList[i][0];
