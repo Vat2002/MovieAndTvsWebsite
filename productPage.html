@@ -6,13 +6,17 @@
 		<!--link this css file in homepage-->
 		<link rel="stylesheet" href="">
 		<style>
+			#main{
+				margin: 0px auto;
+    			width: 80%;
+			}
 			.card {
 				transition: 0.3s;
-				/*width: auto;*/
+				width: auto;
 				/*height: 300px;*/
 				border: 1px solid black; 
 				align-items: center;
-				margin: 9px;
+				margin: 10px;
 				float: left;
 			}
 				
@@ -22,6 +26,7 @@
 				
 			.container {
 				padding: 10px 16px;
+				text-align: center;
 			}
 			.imgWidth{
 				width:100%
@@ -29,9 +34,10 @@
 		</style>
 	</head>
 	<body>
-		<div>
+		<div id="main">
 			<div id="showProduct"></div>
 		</div>
+		<button onclick="printcart()">check cart</button>
 		<script src="javascript/productPage.js"></script>
 	</body>
 </html>
