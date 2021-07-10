@@ -6,9 +6,26 @@
 		<!--link this css file in homepage-->
 		<link rel="stylesheet" href="">
 		<style>
+			#overlay {
+				  position: fixed;
+				  display: none;
+				  width: 100%;
+				  height: 100%;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  bottom: 0;
+				  background-color: rgba(0,0,0,1);
+				  z-index: 2;
+				  cursor: pointer;
+				  color:white;
+				  overflow-y: scroll;
+				  height: calc(100% - 0px);
+				}
 			#main{
 				margin: 0px auto;
     			width: 80%;
+    			left: 10%;
 			}
 			.card {
 				transition: 0.3s;
@@ -16,7 +33,7 @@
 				/*height: 300px;*/
 				border: 1px solid black; 
 				align-items: center;
-				margin: 10px;
+				margin: 9px;
 				float: left;
 			}
 				
@@ -31,13 +48,48 @@
 			.imgWidth{
 				width:100%
 			}
+			table{
+				position: relative;
+				border:2px solid white;
+				width: 80%;
+				right: 0;
+			    top: 0;
+			    bottom: 0;
+			    left: 10%;
+			}
+			priceoncard{
+				display: block;
+				margin: 5%;
+				float: right;
+			}
+			.totalprice{
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="main">
 			<div id="showProduct"></div>
-		</div>
+		</div><br>
 		<button onclick="printcart()">check cart</button>
+		<br>
+		<div id="overlay" onclick="">
+			<button id="" onclick="off()" style="float:right;">Close</button></td>
+			<table><tr><td>
+				<table id="incartitem"></table></td>
+			</tr>
+			<tr>
+				<td id="price" class="totalprice"></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">
+					<button id="placeorderbtn" onclick="">Place Order</button>
+					<button id="resetbtn" onclick="resetthecart()">reset</button>
+				</td>
+			</tr>
+			</table><br>
+			
+		</div>
 		<script src="javascript/productPage.js"></script>
 	</body>
 </html>
