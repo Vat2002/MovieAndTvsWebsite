@@ -5,13 +5,20 @@
 		<meta charset="UTF-8">
 		<!--link this css file in homepage-->
 		<link rel="stylesheet" href="css/productPage.css">
-		<style>
-			
-
+		<style type="text/css">
+			.invoicetable{
+				text-align: center;
+				margin-left: auto; 
+				margin-right: auto;
+				width: 80%;
+				border:2px solid white;
+				border-collapse: collapse;
+			}
 		</style>
+		
 	</head>
 	<body>
-		<form name="buyerDetails" style="display: block;float: right;">
+		<form name="buyerDetails" method="get" style="display: block;float: right;">
 			<fieldset id="namefield"><legend>Name</legend>
 
 			  <label for="fname">First name:</label><br>
@@ -24,14 +31,14 @@
 		  	<fieldset id="addressfield"><legend>Delivery Address</legend>
 
 			  <label for="addressl1">Line1:</label><br>
-			  <input type="text" id="addressl1" name="addressl2"><br>
+			  <input type="text" id="addressl1" name="addressl1"><br>
 
 			  <label for="addressl2">Line2:</label><br>
 			  <input type="text" id="addressl2" name="addressl2"><br>
 
 			  <label for="addressl3">Line2:</label><br>
 			  <input type="text" id="addressl3" name="addressl3"><br>
-			  
+
 		  	</fieldset><br>
 
 		  <label for="phoneno">Contact Number:</label><br>
@@ -53,7 +60,7 @@
 
 		<div id="overlay">
 			<button id="" onclick="off()" style="float:right;font-size:30px;">X</button></td>
-			<table><tr><td>
+			<table class="carttable"><tr><td>
 				<table id="incartitem"></table></td>
 			</tr>
 			<tr>
@@ -67,7 +74,43 @@
 			</tr>
 			</table><br>
 		</div>
-
+		<div class="overlayforinvoice">
+			<h1>Invoice Details</h1>
+			<div style="display: block;width: 300px;height: 100px;float: left;">
+				<h6>Name</h6>
+				<span id="firstname"></span>
+				<span id="lastname"></span>
+			</div>
+			<div style="display: block;width: 200px;height: 100px;float: left;">
+				<h6>Delivery Address</h6>
+				<span id="addressl1span"></span>,<br>
+				<span id="addressl2span"></span>,<br>
+				<span id="addressl3span"></span>.
+			</div>
+			<div style="display: block;width: 300px;height: 100px;float: left;">
+				<h6>Contect Details</h6>
+				<span id="phonenumber"></span><br>
+				<span id="Emali"></span>
+			</div>
+			<div style="display: block;width: 200px;height: 100px;float: left;">
+				<h6>Delivery note</h6>
+				<span id="diliverynote"></span>
+			</div>
+			<br><br>
+			<table border="1px" id="invoicetable" class="invoicetable">
+				<tr>
+					<th>Product ID</th>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+				<tr id="printinvoicesitems"></tr>
+				<tr>
+					<td colspan="3">....</td>
+					<td id="displaytotalprice">price</td>
+				</tr>
+			</table>
+		</div>
 		<script src="javascript/productPage.js"></script>
 	</body>
 </html>

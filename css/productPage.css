@@ -14,6 +14,24 @@
 	  overflow-y: scroll;
 	  height: calc(100% - 0px);
 }
+
+.overlayforinvoice {
+	  position: fixed;
+	  display: none;
+	  width: 100%;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: rgba(0,0,0,1);
+	  z-index: 2;
+	  cursor: pointer;
+	  color:white;
+	  overflow-y: scroll;
+	  height: calc(100% - 0px);
+}
+
 #main{
 	margin: 0px auto;
    	width: 80%;
@@ -40,7 +58,7 @@
 .imgWidth{
 	width:100%
 }
-table{
+.carttable{
 	position: relative;
 	/*border:2px solid white;*/
 	width: 80%;

@@ -26,7 +26,7 @@ for (let i=0;i<productList.length;i++){
 	"</div></div>";
 	//"Description : "+description+"</br>";
 	//console.log(document.getElementById("addtocart").value);
-};
+}
 
 //var productid;
 const itemno=[];//items that added to the cart
@@ -41,11 +41,11 @@ function add2cart(id){
 	var imglocation=productList[0][4];//change this later
 	var totalquantity=1;
 	var item;
-	var index;
+	
 	
 	
 	if (itemno.includes(id)){//check item is already availble in list
-		index=itemno.indexOf(id);
+		var index=itemno.indexOf(id);
 		var quantity=itemquantity[index];
 		item=itemincart(name,imglocation,quantity,price);
 		totalquantity=quantity;
@@ -53,7 +53,7 @@ function add2cart(id){
 		itemquantity[index]=totalquantity;
 		console.log("ava",itemno,itemquantity);
 
-		index2=incartlist.indexOf(item);
+		var index2=incartlist.indexOf(item);
 		incartlist[index2]=itemincart(name,imglocation,itemquantity[index],price);
 		console.log("q:"+itemquantity[index]+"\nindex2:"+index2+"\n"+incartlist[index2]);
 	}else{
@@ -83,7 +83,7 @@ function itemincart(name,imglocation,totalquantity,price){
 }
 
 function printcart(){
-	list=incartlist.valueOf();
+	//list=incartlist.valueOf();
 	console.log(incartlist);
 	if(incartlist.length>0){
 		document.getElementById("incartitem").innerHTML=incartlist.join("");
@@ -119,6 +119,7 @@ function resetthecart(){
 }
 
 function printInvoice(frm){
+	var error=false;
 	var fname=frm.fname.value;
 	var lname=frm.lname.value;
 	var addressl1=frm.addressl1.value;
@@ -127,15 +128,87 @@ function printInvoice(frm){
 	var phoneno=frm.phoneno.value;
 	var email=frm.email.value;
 	var deliverymessage=frm.deliverymessage.value;
-
-	console.log(frm);
-}
-
-function isempty(data,nameofdata){
-	if (data==""||data=="undefined"){
-		alert("somting worng in form");
+	
+	if (fname===""||fname==="undefined"){
+		error=true;
+		console.log("1");
+		document.getElementById("fname").style.border="2px solid red";
 	}
+
+	if (lname===""||lname==="undefined"){
+		document.getElementById("lname").style.border="2px solid red";
+		console.log("2");
+		error=true;
+	}
+
+	if (addressl1===""||addressl1==="undefined"){
+		document.getElementById("addressl1").style.border="2px solid red";
+		console.log("3");
+		error=true;
+	}
+
+	if (addressl2===""||addressl2==="undefined"){
+		document.getElementById("addressl2").style.border="2px solid red";
+		console.log("4",addressl2);
+		error=true;
+	}
+
+	if (addressl3===""||addressl3==="undefined"){
+		document.getElementById("addressl3").style.border="2px solid red";
+		console.log("5");
+		error=true;
+	}
+
+	if (phoneno===""||phoneno==="undefined"){
+		document.getElementById("phoneno").style.border="2px solid red";
+		console.log("6");
+		error=true;
+	}
+
+	if (email===""||email==="undefined"){
+		document.getElementById("email").style.border="2px solid red";
+		error=true;
+	}
+
+	if (deliverymessage===""||deliverymessage==="undefined"){
+		deliverymessage=null;
+	}
+
+	if (error){
+		alert("Fill all the details to place the order");
+	}else if(confirm("Are you sure?")){
+		displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,deliverymessage);
+	}else{
+		//placeorder=false;
+	}
+
 }
+
+function displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,deliverymessage){
+	document.getElementById("firstname").innerHTML=fname;
+	document.getElementById("lastname").innerHTML=lname;
+	document.getElementById("addressl1span").innerHTML=addressl1;
+	document.getElementById("addressl2span").innerHTML=addressl2;
+	document.getElementById("addressl3span").innerHTML=addressl3;
+	document.getElementById("phonenumber").innerHTML=phoneno;
+	document.getElementById("Emali").innerHTML=email;
+	document.getElementById("diliverynote").innerHTML=deliverymessage;
+	var invoiceitem="";
+	for(let i=0;i<itemno.length;i++){
+		invoiceitem+="<tr>"+
+						"<td>"+itemno[i]+"</td>"+//priduct id	
+						"<td>"+productList[itemno[i]][0]+"</td>"+//product name
+						"<td>"+itemquantity[i]+"</td>"+//product Quantity
+						"<td>"+productList[itemno[i]][1]+"</td>"+//product price
+					"</tr>";
+	}
+
+	//document.getElementById("printinvoicesitems").innerHTML=invoiceitem;
+	document.getElementById("invoicetable").innerHTML=invoiceitem;
+	document.getElementById("displaytotalprice").innerHTML=totalPrice;
+	document.getElementsByClassName("overlayforinvoice")[0].style.display="block";
+}
+
 
 //var productid=document.getElementById("add2cart").name;
 //alert(productid);
