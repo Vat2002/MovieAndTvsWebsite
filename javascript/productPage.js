@@ -20,7 +20,7 @@ for (let i=0;i<productList.length;i++){
 	"<div class=\"card\">"+
 	"<img src=\""+imglocation+"\"class=\"imgWidth\">"+
 	"<div class=\"container\">Name : "+name+"<br>"+
-	"Price : $"+price+"<br>"+
+	"Price : &pound;"+price+"<br>"+
 	"Release Date : "+releasedate+"<br>"+
 	"<button id=\"addtocart\" style=\"margin: 10px;\" value=\""+i+"\" onclick=\"add2cart(this.value)\">Add to cart</button>"+
 	"</div></div>";
@@ -29,25 +29,57 @@ for (let i=0;i<productList.length;i++){
 };
 
 //var productid;
+const itemno=[];
+const itemquantity=[];
 const incartlist=[];
+const indexincartlist=[];
 var totalPrice=0;
 //document.getElementById("showProduct").innerHTML=productList;
 function add2cart(id){
 	var name=productList[id][0];
 	var price=productList[id][1];
 	var imglocation=productList[0][4];
+	var totalquantity=1;
 	var item;
-	item="<tr><td width=\"20%\"><img src=\""+imglocation+"\"></td>"+
-	"<td style=\"\">Name : "+name+
-	"<priceoncard>$"+price+"<br></priceoncard>"+
-	/*"<br><button onclick=\"\" style=\"float: right;\">remove</button></td>"+*/
-	"</tr>";
+	var index;
+	
+	
+	if (itemno.includes(id)){//check item is already availble in list
+		index=itemno.indexOf(id);
+		var quantity=itemquantity[index];
+		item=itemincart(name,imglocation,quantity,price);
+		totalquantity=quantity;
+		totalquantity++;
+		itemquantity[index]=totalquantity;
+		console.log("ava",itemno,itemquantity);
+
+		index2=incartlist.indexOf(item);
+		incartlist[index2]=itemincart(name,imglocation,itemquantity[index],price);
+		console.log("q:"+itemquantity[index]+"\nindex2:"+index2+"\n"+incartlist[index2]);
+	}else{
+		item=itemincart(name,imglocation,totalquantity,price);
+		itemno.push(id);
+		itemquantity.push(totalquantity);
+		incartlist.push(item);
+		//indexincartlist.push(templist);
+		console.log(itemno,itemquantity);
+	}
+
 	totalPrice+=price;
+	
 	//productid=parseInt(document.getElementById("addtocart").value);
-	incartlist.push(item);
 	console.log(id,price);
 	//console.log(incartlist);
 	//alert(id);
+}
+
+function itemincart(name,imglocation,totalquantity,price){
+
+	return "<tr><td width=\"20%\"><img src=\""+imglocation+"\"></td>"+
+	"<td style=\"\">Name : "+name+"<br>Quantity: "+totalquantity+
+	"<priceoncard>&pound; "+price+"<br></priceoncard>"+
+	"</tr>";
+
 }
 
 function printcart(){
@@ -55,8 +87,8 @@ function printcart(){
 	console.log(incartlist);
 	if(incartlist.length>0){
 		document.getElementById("incartitem").innerHTML=incartlist.join("");
-		document.getElementById("placeorderbtn").style.display = "block";
-		document.getElementById("price").innerHTML="$"+totalPrice;
+		document.getElementById("placeorderbtn").style.removeProperty("display");
+		document.getElementById("price").innerHTML="&pound;"+totalPrice;
 	}else{
 		document.getElementById("incartitem").innerHTML="<h1 style=\"text-align: center;\">Cart is empty.<h1>";
 		document.getElementById("placeorderbtn").style.display = "none";
@@ -75,8 +107,12 @@ function off() {
 function resetthecart(){
 	while(incartlist.length>0){
 		incartlist.pop();
+		itemno.pop();
+		itemquantity.pop();
 	}
-	window.totalPrice=0;
+
+	totalPrice=0;
+	document.getElementById("price").innerHTML="";
 	printcart();
 }
 
