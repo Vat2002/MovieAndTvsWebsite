@@ -14,7 +14,7 @@ for (let i=0;i<productList.length;i++){
 	var price=productList[i][1];
 	var releasedate=productList[i][2];
 	//var description=productList[i][3];
-	var imglocation=productList[0][4];
+	var imglocation=productList[0][4];//change this later
 	//console.log(name,price);
 	displayProduct+=
 	"<div class=\"card\">"+
@@ -29,16 +29,16 @@ for (let i=0;i<productList.length;i++){
 };
 
 //var productid;
-const itemno=[];
-const itemquantity=[];
-const incartlist=[];
-const indexincartlist=[];
+const itemno=[];//items that added to the cart
+const itemquantity=[];//iteems quantitys
+const incartlist=[];//dispying items
+//const indexincartlist=[];
 var totalPrice=0;
 //document.getElementById("showProduct").innerHTML=productList;
 function add2cart(id){
 	var name=productList[id][0];
 	var price=productList[id][1];
-	var imglocation=productList[0][4];
+	var imglocation=productList[0][4];//change this later
 	var totalquantity=1;
 	var item;
 	var index;
@@ -88,10 +88,12 @@ function printcart(){
 	if(incartlist.length>0){
 		document.getElementById("incartitem").innerHTML=incartlist.join("");
 		document.getElementById("placeorderbtn").style.removeProperty("display");
+		document.getElementById("resetbtn").style.removeProperty("display");
 		document.getElementById("price").innerHTML="&pound;"+totalPrice;
 	}else{
 		document.getElementById("incartitem").innerHTML="<h1 style=\"text-align: center;\">Cart is empty.<h1>";
 		document.getElementById("placeorderbtn").style.display = "none";
+		document.getElementById("resetbtn").style.display = "none";
 	}
 	document.getElementById("overlay").style.display = "block";
 }console.log(incartlist);
@@ -114,6 +116,25 @@ function resetthecart(){
 	totalPrice=0;
 	document.getElementById("price").innerHTML="";
 	printcart();
+}
+
+function printInvoice(frm){
+	var fname=frm.fname.value;
+	var lname=frm.lname.value;
+	var addressl1=frm.addressl1.value;
+	var addressl2=frm.addressl2.value;
+	var addressl3=frm.addressl3.value;
+	var phoneno=frm.phoneno.value;
+	var email=frm.email.value;
+	var deliverymessage=frm.deliverymessage.value;
+
+	console.log(frm);
+}
+
+function isempty(data,nameofdata){
+	if (data==""||data=="undefined"){
+		alert("somting worng in form");
+	}
 }
 
 //var productid=document.getElementById("add2cart").name;

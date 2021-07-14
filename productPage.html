@@ -4,77 +4,55 @@
 	<title>productPage</title>
 		<meta charset="UTF-8">
 		<!--link this css file in homepage-->
-		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="css/productPage.css">
 		<style>
-			#overlay {
-				  position: fixed;
-				  display: none;
-				  width: 100%;
-				  height: 100%;
-				  top: 0;
-				  left: 0;
-				  right: 0;
-				  bottom: 0;
-				  background-color: rgba(0,0,0,1);
-				  z-index: 2;
-				  cursor: pointer;
-				  color:white;
-				  overflow-y: scroll;
-				  height: calc(100% - 0px);
-				}
-			#main{
-				margin: 0px auto;
-    			width: 80%;
-    			left: 10%;
-			}
-			.card {
-				transition: 0.3s;
-				width: auto;
-				/*height: 300px;*/
-				border: 1px solid black; 
-				align-items: center;
-				margin: 9px;
-				float: left;
-			}
-				
-			.card:hover {
-				box-shadow: -4px 4px rgba(0,0,0,0.5);
-			}
-				
-			.container {
-				padding: 10px 16px;
-				text-align: center;
-			}
-			.imgWidth{
-				width:100%
-			}
-			table{
-				position: relative;
-				border:2px solid white;
-				width: 80%;
-				right: 0;
-			    top: 0;
-			    bottom: 0;
-			    left: 10%;
-			}
-			priceoncard{
-				display: block;
-				margin: 5%;
-				float: right;
-			}
-			.totalprice{
-				text-align: center;
-			}
+			
+
 		</style>
 	</head>
 	<body>
+		<form name="buyerDetails" style="display: block;float: right;">
+			<fieldset id="namefield"><legend>Name</legend>
+
+			  <label for="fname">First name:</label><br>
+			  <input type="text" id="fname" name="fname"><br>
+
+			  <label for="lname">Last name:</label><br>
+			  <input type="text" id="lname" name="lname">
+
+			</fieldset>
+		  	<fieldset id="addressfield"><legend>Delivery Address</legend>
+
+			  <label for="addressl1">Line1:</label><br>
+			  <input type="text" id="addressl1" name="addressl2"><br>
+
+			  <label for="addressl2">Line2:</label><br>
+			  <input type="text" id="addressl2" name="addressl2"><br>
+
+			  <label for="addressl3">Line2:</label><br>
+			  <input type="text" id="addressl3" name="addressl3"><br>
+			  
+		  	</fieldset><br>
+
+		  <label for="phoneno">Contact Number:</label><br>
+		  <input type="tel" id="phoneno" name="phoneno" ><br><br>
+
+		  <label for="Email">Emal Address:</label><br>
+		  <input type="text" id="email" name="email"><br><br>
+
+		  <label for="deliverymessage">Delivery Note:</label><br>
+		  <textarea name="deliverymessage" style="width: 200px;height: 100px;">Enter delivery note here...
+		  </textarea>
+		</form>
+
 		<div id="main">
 			<div id="showProduct"></div>
 		</div><br>
-		<button onclick="printcart()">check cart</button>
-		<br>
+
+		<button id="displaythecart" onclick="printcart()">check cart</button>
+
 		<div id="overlay">
-			<button id="" onclick="off()" style="float:right;">Close</button></td>
+			<button id="" onclick="off()" style="float:right;font-size:30px;">X</button></td>
 			<table><tr><td>
 				<table id="incartitem"></table></td>
 			</tr>
@@ -83,13 +61,13 @@
 			</tr>
 			<tr>
 				<td style="text-align: center;">
-					<button id="placeorderbtn" onclick="">Place Order</button>
+					<button id="placeorderbtn" onclick="printInvoice(buyerDetails)">Place Order</button>
 					<button id="resetbtn" onclick="resetthecart()">reset</button>
 				</td>
 			</tr>
 			</table><br>
-			
 		</div>
+
 		<script src="javascript/productPage.js"></script>
 	</body>
 </html>
