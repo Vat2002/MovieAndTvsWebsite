@@ -41,8 +41,7 @@ function add2cart(id){
 	var imglocation=productList[0][4];//change this later
 	var totalquantity=1;
 	var item;
-	
-	
+
 	
 	if (itemno.includes(id)){//check item is already availble in list
 		var index=itemno.indexOf(id);
@@ -89,7 +88,7 @@ function printcart(){
 		document.getElementById("incartitem").innerHTML=incartlist.join("");
 		document.getElementById("placeorderbtn").style.removeProperty("display");
 		document.getElementById("resetbtn").style.removeProperty("display");
-		document.getElementById("price").innerHTML="&pound;"+totalPrice;
+		document.getElementById("price").innerHTML="&pound; "+totalPrice;
 	}else{
 		document.getElementById("incartitem").innerHTML="<h1 style=\"text-align: center;\">Cart is empty.<h1>";
 		document.getElementById("placeorderbtn").style.display = "none";
@@ -149,7 +148,7 @@ function printInvoice(frm){
 
 	if (addressl2===""||addressl2==="undefined"){
 		document.getElementById("addressl2").style.border="2px solid red";
-		console.log("4",addressl2);
+		console.log("4");
 		error=true;
 	}
 
@@ -193,19 +192,29 @@ function displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,
 	document.getElementById("phonenumber").innerHTML=phoneno;
 	document.getElementById("Emali").innerHTML=email;
 	document.getElementById("diliverynote").innerHTML=deliverymessage;
-	var invoiceitem="";
+	var invoiceitem="<tr>"+
+						"<th>Product ID</th>"+
+						"<th>Product Name</th>"+
+						"<th>Quantity</th>"+
+						"<th>Price</th>"+
+					"</tr>";
 	for(let i=0;i<itemno.length;i++){
 		invoiceitem+="<tr>"+
 						"<td>"+itemno[i]+"</td>"+//priduct id	
 						"<td>"+productList[itemno[i]][0]+"</td>"+//product name
 						"<td>"+itemquantity[i]+"</td>"+//product Quantity
-						"<td>"+productList[itemno[i]][1]+"</td>"+//product price
+						"<td> &pound; "+productList[itemno[i]][1]+"</td>"+//product price
 					"</tr>";
 	}
 
+	invoiceitem+="<tr>"+
+					"<td colspan=\"3\">Total Bill</td>"+
+					"<td id=\"displaytotalprice\"> &pound; "+totalPrice+"</td>"+
+				"</tr>"
+	console.log(totalPrice);
 	//document.getElementById("printinvoicesitems").innerHTML=invoiceitem;
+	//document.getElementById("displaytotalprice").innerHTML=totalPrice;
 	document.getElementById("invoicetable").innerHTML=invoiceitem;
-	document.getElementById("displaytotalprice").innerHTML=totalPrice;
 	document.getElementsByClassName("overlayforinvoice")[0].style.display="block";
 }
 
