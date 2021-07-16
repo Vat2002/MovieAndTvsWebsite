@@ -85,6 +85,8 @@ priceoncard{
 }
 .totalprice{
 	text-align: center;
+	color:#d20000;
+	font-size: 30px;
 }
 #displaythecart{
 	position:fixed;

@@ -1,13 +1,13 @@
 //product name,price,relesed date,discription,image location
 const productList=[
 	["Loki",23,"23/10/2020","","images/Loki-Poster-Ogsize.jpg"],
-	["Falcon and Winter Soldier",24,"15/10/2020","","images/Falcon-and-Winter-Soldier-poster-odsize.jpg"],
-	["Peaky Blinders",50,"05/01/1999","","images/Peaky-Blinders-Poster-ogsize.jpg"],
-	["Money Heist",78,"03/01/2000","","images/Money-Heist-Poster-ogsize.jpg"],
-	["Naruto",12,"25/09/2013","","images/Naruto-Poster-ogsize.jpg"],
-	["Dragon Ball",12,"25/09/2013","","images/dragon-ball-z-battle-of-gods-poster-ogsize.jpg"],
-	["Demon Slayer",12,"25/09/2013","","images/Demon-Slayer-Poster-ogsize.jpg"],
-	["Jujutsu kaisen",12,"25/09/2013","","images/Jujutsu-kaisen-Poster-ogsize.jpg"],
+	["Falcon and Winter Soldier",24,"15/10/2020","","images/Falcon-and-Winter-Soldier-poster-resize.jpg"],
+	["Peaky Blinders",50,"05/01/1999","","images/Peaky-Blinders-Poster-resize.jpg"],
+	["Money Heist",78,"03/01/2000","","images/Money-Heist-Poster-resize.jpg"],
+	["Naruto",12,"25/09/2013","","images/Naruto-Poster-resize.jpg"],
+	["Dragon Ball",12,"25/09/2013","","images/dragon-ball-z-battle-of-gods-poster-resize.jpg"],
+	["Demon Slayer",12,"25/09/2013","","images/Demon-Slayer-Poster-resize.jpg"],
+	["Jujutsu kaisen",12,"25/09/2013","","images/Jujutsu-kaisen-Poster-resize.jpg"]
 ];
 
 //dislay products
@@ -77,8 +77,8 @@ function add2cart(id){
 
 function itemincart(name,imglocation,totalquantity,price){
 
-	return "<tr><td width=\"20%\"><img src=\""+imglocation+"\" class=\"imgWidth\" alt=\""+name+"\"></td>"+
-	"<td style=\"\">Name : "+name+"<br>Quantity: "+totalquantity+
+	return "<tr><td width=\"200px\"><img src=\""+imglocation+"\" class=\"imgWidth\" alt=\""+name+"\"></td>"+
+	"<td style=\"width: 100%;\">Name : "+name+"<br>Quantity: "+totalquantity+
 	"<priceoncard>&pound; "+price+"<br></priceoncard>"+
 	"</tr>";
 
