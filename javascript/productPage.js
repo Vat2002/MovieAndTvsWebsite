@@ -1,10 +1,13 @@
 //product name,price,relesed date,discription,image location
 const productList=[
-	["name1",23,"23/10/2020","ksdgkjagsdkhfgakyusgdckjvasdyugakjsdgfk","images/thumbnail/imag1.png"],
-	["name2",24,"15/10/2020","ksdgkjkfkfkagsdkhfgakyusgdckjvasdyugakjsdgfk",""],
-	["name3",50,"05/01/1999","ksdgkjkfkfkagsdkhfgakyusgdckjvasdyugakjsdgfk",""],
-	["name4",78,"03/01/2000","ksdgkjkfkfkagsdkhfgakyusgdckjvasdyugakjsdgfk",""],
-	["name5",12,"25/09/2013","ksdgkjkfkfkagsdkhfgakyusgdckjvasdyugakjsdgfk",""]
+	["Loki",23,"23/10/2020","","images/Loki-Poster-Ogsize.jpg"],
+	["Falcon and Winter Soldier",24,"15/10/2020","","images/Falcon-and-Winter-Soldier-poster-odsize.jpg"],
+	["Peaky Blinders",50,"05/01/1999","","images/Peaky-Blinders-Poster-ogsize.jpg"],
+	["Money Heist",78,"03/01/2000","","images/Money-Heist-Poster-ogsize.jpg"],
+	["Naruto",12,"25/09/2013","","images/Naruto-Poster-ogsize.jpg"],
+	["Dragon Ball",12,"25/09/2013","","images/dragon-ball-z-battle-of-gods-poster-ogsize.jpg"],
+	["Demon Slayer",12,"25/09/2013","","images/Demon-Slayer-Poster-ogsize.jpg"],
+	["Jujutsu kaisen",12,"25/09/2013","","images/Jujutsu-kaisen-Poster-ogsize.jpg"],
 ];
 
 //dislay products
@@ -14,15 +17,15 @@ for (let i=0;i<productList.length;i++){
 	var price=productList[i][1];
 	var releasedate=productList[i][2];
 	//var description=productList[i][3];
-	var imglocation=productList[0][4];//change this later
+	var imglocation=productList[i][4];//change this later
 	//console.log(name,price);
 	displayProduct+=
 	"<div class=\"card\">"+
-	"<img src=\""+imglocation+"\"class=\"imgWidth\">"+
-	"<div class=\"container\">Name : "+name+"<br>"+
-	"Price : &pound;"+price+"<br>"+
-	"Release Date : "+releasedate+"<br>"+
-	"<button id=\"addtocart\" style=\"margin: 10px;\" value=\""+i+"\" onclick=\"add2cart(this.value)\">Add to cart</button>"+
+	"<img src=\""+imglocation+"\"class=\"imgWidth\" alt=\""+name+"\">"+
+	"<div class=\"container\"><span style=\"font-size:18px;\">"+name+"</span><br>"+
+	"<span class=\"reldate\"> Release Date : "+releasedate+"</span><br>"+
+	"<span class=\"price\">Price : &pound;"+price+"</span><br>"+
+	"<button id=\"addtocart\" class=\"btn\" value=\""+i+"\" onclick=\"add2cart(this.value)\">Add to cart</button>"+
 	"</div></div>";
 	//"Description : "+description+"</br>";
 	//console.log(document.getElementById("addtocart").value);
@@ -38,7 +41,7 @@ var totalPrice=0;
 function add2cart(id){
 	var name=productList[id][0];
 	var price=productList[id][1];
-	var imglocation=productList[0][4];//change this later
+	var imglocation=productList[id][4];//change this later
 	var totalquantity=1;
 	var item;
 
@@ -74,7 +77,7 @@ function add2cart(id){
 
 function itemincart(name,imglocation,totalquantity,price){
 
-	return "<tr><td width=\"20%\"><img src=\""+imglocation+"\"></td>"+
+	return "<tr><td width=\"20%\"><img src=\""+imglocation+"\" class=\"imgWidth\" alt=\""+name+"\"></td>"+
 	"<td style=\"\">Name : "+name+"<br>Quantity: "+totalquantity+
 	"<priceoncard>&pound; "+price+"<br></priceoncard>"+
 	"</tr>";
@@ -162,6 +165,10 @@ function printInvoice(frm){
 		document.getElementById("phoneno").style.border="2px solid red";
 		console.log("6");
 		error=true;
+	}else if(!(phoneno.length==10)){
+		error=true;
+		document.getElementById("phoneno").style.border="2px solid red";
+		alert("Phone number max length is 10.\nPlease enter the correct one");
 	}
 
 	if (email===""||email==="undefined"){

@@ -1,3 +1,6 @@
+body{
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 #overlay {
 	  position: fixed;
 	  display: none;
@@ -36,27 +39,33 @@
 	margin: 0px auto;
    	width: 80%;
    	left: 10%;
+   	margin-top: 250px;
 }
 .card {
 	transition: 0.3s;
-	width: auto;
-	/*height: 300px;*/
-	border: 1px solid black; 
+	width: 200px;
+	height: 520px;
+	/*border: 1px solid black; */
 	align-items: center;
 	margin: 9px;
 	float: left;
+	background-color: #ff8255;
 }
 	
 .card:hover {
-	box-shadow: -4px 4px rgba(0,0,0,0.5);
+	box-shadow: -6px 6px rgba(0,0,0,0.5);
 }
 	
 .container {
+	color: white;
 	padding: 10px 16px;
 	text-align: center;
+	height: auto;
 }
+
 .imgWidth{
-	width:100%
+	width: 200px;
+	height: 300px;
 }
 .carttable{
 	position: relative;
@@ -71,19 +80,78 @@ priceoncard{
 	display: block;
 	margin: 5%;
 	float: right;
+	color:#ff895c;
+	font-size: 25px;
 }
 .totalprice{
 	text-align: center;
 }
 #displaythecart{
 	position:fixed;
-	bottom:40px;
+	bottom:30px;
 	right:40px;
 }
 textarea{
 	resize: none;
 }
-priceoncard{
-	color:#ff895c;
-	font-size: 25px;
+
+.price{
+	color: #692929;
+	font-size:20px;
+}
+
+.reldate{
+	font-size: 14px;
+}
+
+.cartbtn{
+	color:white;
+	background-color: #ff7f50;
+    padding: 10px;
+    border: 0px;
+    font-size: initial;
+    transition: 0.1s;
+    border-radius: 5px;
+
+}
+
+.cartbtn:hover{
+	background-color: #00b1b1;
+    box-shadow: -4px 4px rgba(0,0,0,0.5);
+
+}
+
+.cartbtn:active{
+	background-color: #007171;
+}
+
+.btn{
+	margin: 10px;
+    padding: 10px;
+    color: white;
+    border: 0px;
+    background-color: teal;
+    border-radius: 5px;
+    font-size: initial;
+    transition: 0.1s;
+}
+
+.btn:active{
+	background-color: #00b1b1;
+}
+
+input{
+	padding: 2px 3px;
+  	margin: 4px 0;
+  	box-sizing: border-box;
+}
+
+input:focus{
+	background-color: lightblue;
+}
+
+.fieldsetstyle{
+	background-color: #005252;
+    border-radius: 5px;
+    border-color: #35fff6;
 }
