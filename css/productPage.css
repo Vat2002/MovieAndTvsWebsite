@@ -11,7 +11,7 @@ body{
 	  right: 0;
 	  bottom: 0;
 	  background-color: rgba(0,0,0,1);
-	  z-index: 2;
+	  z-index: 6;
 	  cursor: pointer;
 	  color:white;
 	  overflow-y: scroll;
@@ -28,11 +28,12 @@ body{
 	  right: 0;
 	  bottom: 0;
 	  background-color: rgba(0,0,0,1);
-	  z-index: 2;
+	  z-index: 7;
 	  cursor: pointer;
 	  color:white;
 	  overflow-y: scroll;
 	  height: calc(100% - 0px);
+	  padding: 10px;
 }
 
 #main{
@@ -156,4 +157,38 @@ input:focus{
 	background-color: #005252;
     border-radius: 5px;
     border-color: #35fff6;
+}
+
+/*remove input number's arrow*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.totalbill{
+	background-color: brown;
+}
+
+.invoicetable{
+	text-align: center;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 20px;
+	width: 80%;
+	border:2px solid white;
+	border-collapse: collapse;
+}
+
+.invoicedetails{
+	display: block;
+	width: 200px;
+	height: 100px;
+	float: left;
 }

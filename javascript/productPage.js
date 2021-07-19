@@ -27,17 +27,14 @@ for (let i=0;i<productList.length;i++){
 	"<span class=\"price\">Price : &pound;"+price+"</span><br>"+
 	"<button id=\"addtocart\" class=\"btn\" value=\""+i+"\" onclick=\"add2cart(this.value)\">Add to cart</button>"+
 	"</div></div>";
-	//"Description : "+description+"</br>";
-	//console.log(document.getElementById("addtocart").value);
 }
 
-//var productid;
 const itemno=[];//items that added to the cart
 const itemquantity=[];//iteems quantitys
 const incartlist=[];//dispying items
-//const indexincartlist=[];
 var totalPrice=0;
-//document.getElementById("showProduct").innerHTML=productList;
+//const indexincartlist=[];
+//dispaly product in product page
 function add2cart(id){
 	var name=productList[id][0];
 	var price=productList[id][1];
@@ -63,18 +60,17 @@ function add2cart(id){
 		itemno.push(id);
 		itemquantity.push(totalquantity);
 		incartlist.push(item);
-		//indexincartlist.push(templist);
 		console.log(itemno,itemquantity);
 	}
 
 	totalPrice+=price;
 	
-	//productid=parseInt(document.getElementById("addtocart").value);
-	console.log(id,price);
+	//console.log(id,price);
 	//console.log(incartlist);
 	//alert(id);
 }
 
+//display product as a list in overlay cart 
 function itemincart(name,imglocation,totalquantity,price){
 
 	return "<tr><td width=\"200px\"><img src=\""+imglocation+"\" class=\"imgWidth\" alt=\""+name+"\"></td>"+
@@ -84,9 +80,9 @@ function itemincart(name,imglocation,totalquantity,price){
 
 }
 
+//display the cart in overlay fx 
 function printcart(){
-	//list=incartlist.valueOf();
-	console.log(incartlist);
+	//console.log(incartlist);
 	if(incartlist.length>0){
 		document.getElementById("incartitem").innerHTML=incartlist.join("");
 		document.getElementById("placeorderbtn").style.removeProperty("display");
@@ -100,14 +96,11 @@ function printcart(){
 	document.getElementById("overlay").style.display = "block";
 }console.log(incartlist);
 
-/*function on() {
-  document.getElementById("incartitem overlay").style.display = "block";
-}*/
-
+//turn off the overlay fx
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
-
+//reset the cart,all the items and price
 function resetthecart(){
 	while(incartlist.length>0){
 		incartlist.pop();
@@ -120,7 +113,8 @@ function resetthecart(){
 	printcart();
 }
 
-function printInvoice(frm){
+//
+function formforInvoice(frm){
 	var error=false;
 	var fname=frm.fname.value;
 	var lname=frm.lname.value;
@@ -130,42 +124,45 @@ function printInvoice(frm){
 	var phoneno=frm.phoneno.value;
 	var email=frm.email.value;
 	var deliverymessage=frm.deliverymessage.value;
+
+	//console.log("4nno>>"+phoneno+" len>>"+phoneno.length);
 	
+	//check user input is wrong or not and let user know where the error is
 	if (fname===""||fname==="undefined"){
 		error=true;
-		console.log("1");
+		//console.log("1");
 		document.getElementById("fname").style.border="2px solid red";
 	}
 
 	if (lname===""||lname==="undefined"){
 		document.getElementById("lname").style.border="2px solid red";
-		console.log("2");
+		//console.log("2");
 		error=true;
 	}
 
 	if (addressl1===""||addressl1==="undefined"){
 		document.getElementById("addressl1").style.border="2px solid red";
-		console.log("3");
+		//console.log("3");
 		error=true;
 	}
 
 	if (addressl2===""||addressl2==="undefined"){
 		document.getElementById("addressl2").style.border="2px solid red";
-		console.log("4");
+		//console.log("4");
 		error=true;
 	}
 
 	if (addressl3===""||addressl3==="undefined"){
 		document.getElementById("addressl3").style.border="2px solid red";
-		console.log("5");
+		//console.log("5");
 		error=true;
 	}
 
 	if (phoneno===""||phoneno==="undefined"){
 		document.getElementById("phoneno").style.border="2px solid red";
-		console.log("6");
+		//console.log("6");
 		error=true;
-	}else if(!(phoneno.length==10)){
+	}else if(phoneno.length!=10){
 		error=true;
 		document.getElementById("phoneno").style.border="2px solid red";
 		alert("Phone number max length is 10.\nPlease enter the correct one");
@@ -177,20 +174,20 @@ function printInvoice(frm){
 	}
 
 	if (deliverymessage===""||deliverymessage==="undefined"){
-		deliverymessage=null;
+		deliverymessage="No delivery note";
 	}
 
-	if (error){
-		alert("Fill all the details to place the order");
+	if (error){//display the error msg
+		alert("Fill in all the details correctly to place the order");
 	}else if(confirm("Are you sure?")){
 		displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,deliverymessage);
-	}else{
-		//placeorder=false;
 	}
 
 }
 
+//display the invoice as overlat fx
 function displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,deliverymessage){
+	//displaying user details
 	document.getElementById("firstname").innerHTML=fname;
 	document.getElementById("lastname").innerHTML=lname;
 	document.getElementById("addressl1span").innerHTML=addressl1;
@@ -199,12 +196,14 @@ function displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,
 	document.getElementById("phonenumber").innerHTML=phoneno;
 	document.getElementById("Emali").innerHTML=email;
 	document.getElementById("diliverynote").innerHTML=deliverymessage;
+	//generating invoice table
 	var invoiceitem="<tr>"+
 						"<th>Product ID</th>"+
 						"<th>Product Name</th>"+
 						"<th>Quantity</th>"+
 						"<th>Price</th>"+
 					"</tr>";
+	//Adding product details to the table
 	for(let i=0;i<itemno.length;i++){
 		invoiceitem+="<tr>"+
 						"<td>"+itemno[i]+"</td>"+//priduct id	
@@ -214,21 +213,14 @@ function displayinvoice(fname,lname,addressl1,addressl2,addressl3,phoneno,email,
 					"</tr>";
 	}
 
+	//add total price to the table
 	invoiceitem+="<tr>"+
-					"<td colspan=\"3\">Total Bill</td>"+
-					"<td id=\"displaytotalprice\"> &pound; "+totalPrice+"</td>"+
+					"<td colspan=\"3\" class=\"totalbill\">Total Bill</td>"+
+					"<td id=\"displaytotalprice\" class=\"totalbill\"> &pound; "+totalPrice+"</td>"+
 				"</tr>"
-	console.log(totalPrice);
-	//document.getElementById("printinvoicesitems").innerHTML=invoiceitem;
-	//document.getElementById("displaytotalprice").innerHTML=totalPrice;
-	document.getElementById("invoicetable").innerHTML=invoiceitem;
-	document.getElementsByClassName("overlayforinvoice")[0].style.display="block";
+	//console.log(totalPrice);
+	document.getElementById("invoicetable").innerHTML=invoiceitem;//add invoice details to html
+	document.getElementsByClassName("overlayforinvoice")[0].style.display="block";//displaying invoice 
 }
 
-
-//var productid=document.getElementById("add2cart").name;
-//alert(productid);
-//document.getElementById("addtocart").addEventListener("click",add2cart)
 document.getElementById("showProduct").innerHTML=displayProduct;
-//document.getElementById("incartitem").innerHTML=incartlist.join("");
-//document.getElementById("incartitem").innerHTML=list;

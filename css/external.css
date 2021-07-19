@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color:teal;
+    background-color:#005252;
     width: 100%;
 }
 .navbar ul li a:hover{
@@ -15,6 +15,7 @@ body {
   background-color:coral;
   position: fixed;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  z-index: 5;
 
 }
 .navbar ul li {
@@ -24,9 +25,9 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 18px 16px;
+  padding: 18px 14px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   padding-bottom:50px;
 }
 a{
@@ -34,6 +35,7 @@ a{
 }
 
 .pageLogo{
+    margin-left:-25px;
     padding-right: 150px;
     align-self: normal;
 }
@@ -45,7 +47,6 @@ footer{
     height: 300px;
     background:white;
     clear:both;
-    margin:none;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .footHead{
@@ -54,9 +55,9 @@ footer{
 .line{
     border-right:2px solid black;
     height: 270px;
-    padding-right: 20px;
+    padding-right: 40px;
 }
-#pageFooterSpace{
+.pageFooterSpace{
     padding-left: 60px;
 }
 #socials{

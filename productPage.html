@@ -1,37 +1,20 @@
 <!doctype html>
 <html lang="en">
 	<head>
-	<title>productPage</title>
+	<title>AVAN</title>
 		<meta charset="UTF-8">
 		<!--link this css file in homepage-->
+		<link rel="shortcut icon" href="images/titleicon2.png" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/productPage.css">
-		<link rel="stylesheet" type="text/css" href="css/external.css">
-		<style type="text/css">
-			.invoicetable{
-				text-align: center;
-				margin-left: auto; 
-				margin-right: auto;
-				margin-top: 20px;
-				width: 80%;
-				border:2px solid white;
-				border-collapse: collapse;
-			}
-
-			.invoicedetails{
-				display: block;
-				width: 200px;
-				height: 100px;
-				float: left;
-			}
-		</style>
-		
+		<link rel="stylesheet" type="text/css" href="css/external.css">		
 	</head>
 	<body>
 
 		<!--Navigation bar-->
 	    <div class="navbar">
 	        <ul>
-	            <li class="pageLogo"><img src="images/logo.png" alt="pageLogo" height="100" width="100"></li>
+	            <li class="pageLogo"><img src="images/avanlogo.png" alt="pageLogo" width="200" style="margin-top: 10px;"></li>
 	            <li class="mainPage"><a href="mainPage.html">Main</a></li>
 	            <li class="tvPage"><a href="tvPage.html">Tv Series</a></li>
 	            <li class="animePage"><a href="animePage.html">Anime Series</a></li>
@@ -45,7 +28,7 @@
 	    <!--End Navigation Bar-->
 
 	    <!--page content-->
-
+	    <!--Product form-->
 		<form name="buyerDetails" method="get" style="display: block;float: right;">
 		<fieldset class="fieldsetstyle" style="color: white;">
 			<fieldset id="namefield"><legend>Name</legend>
@@ -71,7 +54,7 @@
 		  	</fieldset><br>
 
 		  <label for="phoneno">Contact Number:</label><br>
-		  <input type="tel" id="phoneno" name="phoneno" ><br><br>
+		  <input type="number" id="phoneno" name="phoneno" ><br><br>
 
 		  <label for="Email">Emal Address:</label><br>
 		  <input type="text" id="email" name="email"><br><br>
@@ -80,12 +63,15 @@
 		  <textarea name="deliverymessage" style="width: 200px;height: 100px;"></textarea>
 		</fieldset>
 		</form>
-
+		<!--End form-->
+		<!--Display all product-->
 		<div id="main">
 			<h1>Select Your Product</h1>
 			<div id="showProduct"></div>
 		</div><br>
+		<!--End-->
 
+		<!--cart-->
 		<button id="displaythecart" class="cartbtn" onclick="printcart()">
 			<img src="images/shopping-cart-icon.png" width="50px" alt="shopping-cart-icon">
 		</button>
@@ -100,13 +86,15 @@
 			</tr>
 			<tr>
 				<td style="text-align: center;">
-					<button id="placeorderbtn" class="btn" onclick="printInvoice(buyerDetails)">Place Order</button>
+					<button id="placeorderbtn" class="btn" onclick="formforInvoice(buyerDetails)">Place Order</button>
 					<button id="resetbtn" class="btn" onclick="resetthecart()">reset</button>
 				</td>
 			</tr>
 			</table><br>
 		</div>
+		<!--End cart-->
 
+		<!--invoice-->
 		<div class="overlayforinvoice">
 			<h1>Invoice Details</h1>
 			<table border="1px" id="invoicetable" class="invoicetable">
@@ -137,6 +125,7 @@
 			</a>
 			
 		</div>
+		<!--end invoice-->
 		<!--End page content-->
 
 		<!--Footer-->
