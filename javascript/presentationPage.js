@@ -4,7 +4,7 @@ setTimeout(function(){
   setTimeout(function(){document.getElementById("overlay").style.display = "none";},200);
 },4000);
 
-const names=["ND Kooragamage","M.A  Zahir","N.V.V De Dilva","P.R.A.U Pallemulla"];
+const names=["This overlay page created by N.D Kooragamage","M.A Zahir","N.V.V De Dilva","P.R.A.U Pallemulla"];
 var srtNames="";//string variable for display name
 names.forEach(printNames);
 function printNames(val,index){

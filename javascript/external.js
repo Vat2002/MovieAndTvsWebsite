@@ -2,6 +2,7 @@ var myButton=document.getElementById("topButton");
 
 
 //when the user scrolls more than 50px from the top of the page, show the button
+//(https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 window.onscroll=function(){scrollFunction()};
 
 function scrollFunction(){

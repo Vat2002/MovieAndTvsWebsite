@@ -54,7 +54,7 @@ body{
 }
 	
 .card:hover {
-	box-shadow: -6px 6px rgba(0,0,0,0.5);
+	box-shadow: -6px 6px rgba(0,255,231,0.5);
 }
 	
 .container {
@@ -153,11 +153,6 @@ input:focus{
 	background-color: lightblue;
 }
 
-.fieldsetstyle{
-	background-color: #005252;
-    border-radius: 5px;
-    border-color: #35fff6;
-}
 
 /*remove input number's arrow*/
 /* Chrome, Safari, Edge, Opera */
@@ -170,6 +165,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.fieldsetstyle{
+	background-color: #005252;
+    border-radius: 5px;
+    border-color: #35fff6;
 }
 
 .totalbill{

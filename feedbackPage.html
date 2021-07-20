@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!--Title icon-->
+        <link rel="shortcut icon" href="images/titleicon2.png" type="image/x-icon">
+        <!--External css file-->
+        <link rel="stylesheet" type="text/css" href="css/external.css">
+        <!--Main Page css file-->
+        <link rel="stylesheet" type="text/css" href="css/mainPage.css">
+        <!--Feedback Page css file-->
+        <link rel="stylesheet" type="text/css" href="css/feedbackPage.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>AVAN</title>
+    </head>
+
+    <body>
+    <!--Navigation bar-->
+    <div class="navbar">
+        <ul>
+            <li class="pageLogo"><img src="images/avanlogo.png" alt="pageLogo" width="200"  style="margin-top:10px;"></li>
+            <li class="mainPage"><a href="mainPage.html">Main</a></li>
+            <li class="tvPage"><a href="tvPage.html">Tv Series</a></li>
+            <li class="animePage"><a href="animePage.html">Anime Series</a></li>
+            <li class="productPage"><a href="productPage.html">Products</a></li>
+            <li class="quizPage"><a href="quizPage.html">Quiz</a></li>
+            <li class="galleryPage"><a href="galleryPage.html">Gallery</a></li>
+            <li class="feedbackPage"><a href="feedbackPage.html">Feedback</a></li>
+            <li class="aboutusPage"><a href="aboutUsPage.html">About Us</a></li>
+        </ul>
+    </div>
+    <!--End Navigation Bar-->
+
+
+    <!--Start of feedback-->
+    <div class="mainForm" id="formMain">
+        <!--Overlay form-->
+        <div class="overlayForm" id="formOverlay"></div>
+        
+    
+        <div class="formBegin" id="beginForm">
+            <div class="feedbackHeading">
+                <h1><u>FeedBack Form</u></h1>
+            </div>
+            <ul>
+                <li>Please fill the form if you have any feedback or queries on this website</li>
+            </ul>
+            <div class="midLine"></div>
+            <form action="mailto:nammuni.20200765@iit.ac.lk" method="post">
+                <!--enter user first name-->
+                <div class="inputData textField1">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="firstname" class="inputDataField" placeholder="Enter First Name">
+                    <div id="firstName" class="promptMsg"></div>
+                </div>
+                <!--enter user last name-->
+                <div class="inputData textField2">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lastname" class="inputDataField" placeholder="Enter Last Name">
+                    <div id="lastName" class="promptMsg"></div>
+                </div>
+                <!--enter user contact number-->
+                <div class="inputData textField3">
+                    <label for="telNum">Contact Number:</label>
+                    <input type="tel" id="telNum" name="telNum" class="inputDataField" placeholder="Enter Telephone Number">
+                    <div id="contactNum" class="promptMsg"></div>
+                </div>
+                <!--enter user email-->
+                <div class="inputData textField4">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="inputDataField" placeholder="Enter Email">
+                    <div id="emailAddress" class="promptMsg"></div>
+                </div>
+                <ul>
+                    <li>Select what type of query you have</li>
+                </ul>
+                <!--user select the type of query-->
+                <div class="radioButtons">
+                    <input type="radio" id="feedback" name="feedback">
+                    <label for="feedback">Feedback</label>
+                    <input type="radio" id="query" name="query">
+                    <label for="query">Query</label>
+                    <input type="radio" id="product" name="product">
+                    <label for="product">Product</label>
+                    <input type="radio" id="gallery" name="gallery">
+                    <label for="gallery">Gallery</label>
+                    <input type="radio" id="quiz" name="quiz">
+                    <label for="quiz">Quiz</label>
+                    <input type="radio" id="tvseriesnanime" name="tvseriesnanime">
+                    <label for="tvseriesnanime">Tv Series & Anime</label>
+                    
+                </div>
+                <div id="radioButtonSet" class="promptMsg"></div>
+                <!--Text area-->
+                <p class="enterQueryText">Enter your query:</p>
+                <textarea class="enterQuery" id="enterQuery" name="enterQuery" rows="10" cols="50" placeholder="Enter your text here"></textarea>
+                <div id="queryBox" class="promptMsg"></div>
+
+                <!--rating website-->
+                <p class="rateWebpageText">How would you rate this website?</p>
+            <div class="radioButtonsRate">
+                <input type="checkbox" id="veryDis" name="veryDis">
+                <label for="veryDis">Very Dissatisfied</label>
+                <input type="checkbox" id="dis" name="dis">
+                <label for="dis">Dissatisfied</label>
+                <input type="checkbox" id="neutral" name="neutral">
+                <label for="neutral">Neutral</label>
+                <input type="checkbox" id="statis" name="satis">
+                <label for="statis">Satisfied</label>
+                <input type="checkbox" id="verySatis" name="verySatis">
+                <label for="verySatis">Very Statisfied</label>
+                
+            </div>
+                <!--button to submit all-->
+                <div class="submitButton">
+                    <button class="viewDataButton button" onclick="checkData()" type="button"><span>View entered data</span></button>
+                    <button hidden type="submit" id="submitButtonHTML">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!--Feedback javascript file-->
+    <script src="javascript/feedbackPage.js"></script>
+   <!--Footer-->
+   <footer class="footer" id="footerId">
+       <!--Social part-->
+       <div id="socials" class="footHead line pageFooterSpace">
+           <h2>Socials</h2>
+           <p>
+               <a href="https://www.youtube.com/"><img src="images/youtube.png" alt="youtube" width="55" height="50" ></a>&nbsp;&nbsp;
+               <a href="https://www.facebook.com/"><img src="images/facebook.jpg" alt="facebook" width="55" height="50" ></a>
+           </p>
+           <p>   
+               <a href="https://www.twitter.com/"><img src= "images/twitter.png" alt="twitter" width="55" height="50"></a>&nbsp;&nbsp;
+               <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="instagram" width="55" height="50" ></a>
+           </p>
+           <div class="verticalline" id="vline"></div>
+       </div>
+       <!--End of Socials-->
+
+       <!--Pages part-->
+       <div class="footHead line pageFooterSpace">
+           <h2>Pages</h2>
+           <p>
+           <a href="mainPage.html">Main</a>&nbsp;
+           <a href="tvPage.html" style="padding-left: 25px;">Tv Page</a>&nbsp;
+           </p>
+           <p>
+           <a href="animePage.html">Anime</a>&nbsp;
+           <a href="productPage.html" style="padding-left: 15px;">Product</a>&nbsp;
+           </p>
+           <p>
+           <a href="quizPage.html">Quiz</a>&nbsp;
+           <a href="galleryPage.html" style="padding-left: 28px;">Gallery</a>&nbsp;
+           </p>
+           <a href="feedbackPage.html">Feedback</a>&nbsp;
+           <a href="aboutusPage.html">About us</a>
+       </div>
+       <!--End of Pages-->
+       
+       <!--Sitemap and Page editor buttons-->
+       <div class="footHead line pageFooterSpace">
+           <h2>Other</h2>
+               <form action="sitemapPage.html"><p><button class="sitemapButton">Sitemap</button></p></form>
+               <form action="student2.html"><p><button class="pageEditorButton">Page Editor</button></p></form>
+       </div>
+       <!--End of sitemap and page editor-->
+
+       <!--Page logo-->
+       <div class="logoFooter pageFooterSpace">
+           <img src="images/logo.png" alt="Page logo" width="650" height="290">
+       </div>
+       <!--End of page logo-->
+       
+       <!--Top button-->
+       <button onclick="topFunction()" id="topButton" class="topButton" title="Get back to the top"><img src="images/toparrow.jpg" alt="Top Arrow" width="25" height="25">Top</button>
+       <!--End of top button-->
+   
+   <script  src="javascript/external.js"></script>
+   </footer>
+   <!--End of footer-->
+
+    </body>
+</html>

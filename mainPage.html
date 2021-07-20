@@ -5,16 +5,28 @@
         <link rel="shortcut icon" href="images/titleicon2.png" type="image/x-icon">
         <!--External css file-->
         <link rel="stylesheet" type="text/css" href="css/external.css">
+        <!--Main Page css file-->
+        <link rel="stylesheet" type="text/css" href="css/mainPage.css">
+        <!--presentationpage css-->
+        <link rel="stylesheet" href="css/presentationPage.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <title>AVAN</title>
     </head>
 
     <body>
+    <!--Overlay presentation page-->
+    <div id="overlay" class="position">
+        <h2>Group Members</h2><br>
+        <div id="displayNames"></div>
+    </div>
+    <script src="javascript/presentationPage.js"></script>
+    <!--end-->
+
     <!--Navigation bar-->
     <div class="navbar">
         <ul>
-            <li class="pageLogo"><img src="images/avanlogo.png" alt="pageLogo" width="200" style="margin-top:10px;"></li>
+            <li class="pageLogo"><img src="images/avanlogo.png" alt="pageLogo" width="200"  style="margin-top:10px;"></li>
             <li class="mainPage"><a href="mainPage.html">Main</a></li>
             <li class="tvPage"><a href="tvPage.html">Tv Series</a></li>
             <li class="animePage"><a href="animePage.html">Anime Series</a></li>
@@ -27,8 +39,59 @@
     </div>
     <!--End Navigation Bar-->
 
+    <div class="mainPageAnchor">
+        <span>Move to:</span>
+        <form style="display:inline" action="#contentId"><button type="submit">Content</button></form>
+        <form style="display:inline" action="#footerId"><button type="submit">Footer</button></form>
+    </div>
+    <div class="mainPage">
+        <!--Background image-->
+        <img src="images/mainpagebackground2.jpg" alt="" class="mainPageBackground">
+        <div class="midBorder"></div>
+        <!--Welcome-->
+        <div class="welcomeText">
+            <h1>Welcome to the <u>Tv series</u> & <u>Anime</u> house</h1>
+        </div>
+        <div class="subWelcomeText">
+            <h2 class="subWelcomeText2">Watch your favorite <br>Tv series & Anime!!!</h2>
+        </div>
+    </div>
     
+        
+    <!--Content in the webpage(Tv series and Anime)-->
+    <div class="content" id="contentId">
+        <h2 class="contentHeader">Content</h2>
+    </div>
+        <div class="tvContent">
+                <fieldset class="tvContentField">
+                    <img class="tvContentImage mainContentImage" src="images/tvseriesmain.gif" alt="Gif on tv series" height="350" width="300">
+                
+                    <h2 class="tvContentHead">TV SERIES</h2>
+                    <p class="mainText">
+                        We love to a watch television series don't we?<br>
+                        Why not visit the television series page and watch any type of genres including <b>Action, Adeventure, Comedy,
+                         Crime and mystery, Fantasy, Horror and Romance</b>.
+                    </p>
+                    <form action="tvPage.html"><button type="submit" class="fieldButton"><span><b>Browse TV SERIES collection</b></span></button></form>
+                </fieldset>
+        </div>
+        
+        
+    <div class="animeContent">
+        <fieldset class="animeContentField">
+            <img class="animeContentImage mainContentImage" src="images/animemain.gif" alt="Gif on anime series" height="350" width="300">
+
+            <h2 class="animeContentHead">ANIME SERIES</h2>
+            <p class="mainText">
+                Anime is rising in popularity in western pop culture and for good reason too with their
+                vast variety of show and unique out of this world concepts..
+            </p>
+            <form action="animePage.html"><button type="submit" class="fieldButton"><span><b>Browse Anime collection</b></span></button></form>
+        </fieldset>    
+    </div>
+    <!--End of the content in the web page-->
     
+
     <!--Footer-->
     <div style="height:1000px"></div>
     <footer class="footer" id="footerId">
@@ -90,4 +153,5 @@
     <!--End of footer-->
 
     </body>
+
 </html>

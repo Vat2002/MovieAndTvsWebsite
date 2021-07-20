@@ -1,0 +1,179 @@
+.tvAnchors{
+    margin-top: -30px;
+    background-color:aqua;
+    width: fit-content;
+    width:480px;
+    height:40px;
+    text-align: center;
+    border-radius:4px;
+    margin-left:20px;
+    position: fixed;
+    z-index:3;
+}
+.text{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:large;
+}
+fieldset{
+    width:fit-content;
+    border:7px;
+    border-radius:4px;
+    border-style: groove;
+}
+.tvMainHeading{
+    text-align: center;
+    font-size:45px;
+    border:none;
+    margin-top:150px; 
+    background-color:aquamarine;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    margin-left: 520px;
+    padding: 20px;
+    width: 370px;
+    z-index:2;  
+}
+mark{
+    background-color:orange;
+}
+fieldset{
+    background-color:teal;
+}
+.lokiField{
+    width: fit-content;
+
+}
+.LokiImage{
+    margin-top:-100px;
+    float:left;
+    
+}
+.tvLegend{
+    font-size:50px;
+    margin-left: 400px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#lokiDescription{
+   
+    margin-left:380px;
+    z-index:2;
+}
+.tvLegend2{
+    font-size:50px;
+    margin-left: 250px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ytFrame{
+    float:right;
+}
+.winterImage{
+    margin-top:-100px;
+    float:right;
+}
+.ytFrame2{
+    float:left;
+}
+.tvLegend3{
+    font-size:50px;
+    padding-left: 380px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.blindersImage{
+    margin-top:-100px;
+    float:left;
+}
+#blindersDescription{
+    
+    margin-left: 380px;
+}
+.ytFrame3{
+    margin-top:-20px;
+    float:right;
+}
+.tvLegend4{
+    font-size:50px;
+    margin-left: 760px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.heistImage{
+    margin-top:-100px;
+    float:right;
+}
+.ytFrame4{
+   float:left;
+}
+.tvLeftRedirectButton{
+    margin-left: 30px;
+    font-size: 20px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background-color: rgb(30, 176, 244);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.tvLeftRedirectButton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+.tvLeftRedirectButton span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.3s;
+}
+.tvLeftRedirectButton:hover span{
+    padding-right: 30px;
+}
+.tvLeftRedirectButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.tvRightRedirectButton{
+    margin-left:650px;
+    font-size: 20px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background-color: rgb(30, 176, 244);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.tvRightRedirectButton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+.tvRightRedirectButton span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.3s;
+}
+.tvRightRedirectButton:hover span{
+    padding-right: 30px;
+}
+.tvRightRedirectButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.fieldImage{
+    border:5px solid white;
+}
+.fieldImage:hover{
+    display:flex;
+    transition:0.5s;
+    z-index:2;
+    transform:scale(0.9);
+}

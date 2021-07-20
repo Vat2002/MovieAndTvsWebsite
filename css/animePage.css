@@ -1,0 +1,188 @@
+.animeAnchors{
+    margin-top: -10px;
+    background-color:aqua;
+    width: fit-content;
+    width:480px;
+    height:40px;
+    text-align: center;
+    border-radius:4px;
+    margin-left:20px;
+    position: fixed;
+    z-index:3;
+}
+.text{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:large;
+}
+fieldset{
+    border:5px;
+    border-radius: 4px;
+    border-style:groove;
+    background-color: teal;
+    border-color:aqua;
+    width:fit-content;
+}
+.animeMainHeading{
+    text-align: center;
+    font-size:20px;
+    border:none;
+    margin-top:120px; 
+    background-color:aquamarine;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    margin-left: 600px;
+    padding: 20px;
+    width: 200px;
+    z-index:2;
+}
+.narutoField{
+    margin-top:50px;
+}
+.animeLegend{
+    font-size:50px;
+    margin-left: 370px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.narutoImage{
+    margin-top:-100px;
+    float:left;
+}
+.narutoDescription{
+    margin-left:370px;
+}
+.animeYtFrame{
+    float:right;
+}
+.dragonField{
+    margin-top:50px;
+}
+.animeLegend2{
+    font-size:50px;
+    padding-left: 800px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.dragonImage{
+    margin-top:-100px;
+    float:right;
+}
+.animeYtFrame2{
+    float:left;
+}
+.demonField{
+    margin-top:50px;
+}
+.animeLegend3{
+    font-size:50px;
+    padding-left: 370px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.demonImage{
+    margin-top:-100px;
+    float:left;
+}
+.demonDescription{
+    margin-left:370px;
+    
+}
+.animeYtFrame3{
+    float:right;
+}
+.animeLegend4{
+    font-size:50px;
+    padding-left: 720px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.jjkField{
+    margin-top:100px;
+}
+.jjkDescription{
+    margin-top:-250px;
+    margin-right: 400px;
+    float:right;
+}
+.jjkImage{
+    margin-top:-100px;
+    float:right;
+}
+.animeYtFrame4{
+    margin-top: -100px;
+    float:left;
+}
+.jjkField{
+    margin-bottom: 100px;
+}
+.animeLeftRedirectButton{
+    margin-left: 30px;
+    font-size: 20px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background-color: rgb(30, 176, 244);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.animeLeftRedirectButton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+.animeLeftRedirectButton span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.3s;
+}
+.animeLeftRedirectButton:hover span{
+    padding-right: 30px;
+}
+.animeLeftRedirectButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.animeRightRedirectButton{
+    margin-left:650px;
+    font-size: 20px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background-color: rgb(30, 176, 244);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.animeRightRedirectButton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+.animeRightRedirectButton span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.3s;
+}
+.animeRightRedirectButton:hover span{
+    padding-right: 30px;
+}
+.animeRightRedirectButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.fieldImage{
+    border:5px solid white;
+}
+.fieldImage:hover{
+    display:flex;
+    transition:0.3s;
+    z-index:2;
+    transform:scale(0.9);
+}
