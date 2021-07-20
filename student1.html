@@ -3,28 +3,109 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Page Editor: Nadun Danushka</title>
+	 <link rel="shortcut icon" href="images/titleicon2.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/pageEditor.css">
+	<link rel="stylesheet" type="text/css" href="css/external.css">
 </head>
 
-<body>
-	<div class="editorImage"><img src="images/[IMAGE]" class="editorImageSource"></div>
-	<h2>Nadun Danushka Kooragamage</h2>
-		<p>UoW Number - W1837862</p>
-		<p>IIT Number - 20200818</p>
+<body class="pageEditorBody">
+< <!--Navigation bar-->
+<div style="height:60px"></div>
+    <div class="navbar">
+        <ul>
+            <li class="pageLogo"><img src="images/avanlogo.png" alt="pageLogo" height="100" width="200"></li>
+            <li class="mainPage"><a href="mainPage.html">Main</a></li>
+            <li class="tvPage"><a href="tvPage.html">Tv Series</a></li>
+            <li class="animePage"><a href="animePage.html">Anime Series</a></li>
+            <li class="productPage"><a href="productPage.html">Products</a></li>
+            <li class="quizPage"><a href="quizPage.html">Quiz</a></li>
+            <li class="galleryPage"><a href="galleryPage.html">Gallery</a></li>
+            <li class="feedbackPage"><a href="feedbackPage.html">Feedback</a></li>
+            <li class="aboutusPage"><a href="aboutUsPage.html">About Us</a></li>
+        </ul>
+    </div>
+    <!--End Navigation Bar-->
+	
+	<div class="editorImage"><img src="images/[IMAGE]
+	" class="editorImageSource"></div>
+	<h2 class="pageEditorPage">Nadun Danushka Kooragamage</h2>
+		<p class="pageEditorPage">UoW Number - W1837862</p>
+		<p class="pageEditorPage">IIT Number - 20200818</p>
 		
-	<h2>My Roles:</h2>
-		<p>Student 1:</p>
-		<p> - Presentation Page</p>
-		<p> - Products Page</p>
+	<h2 class="pageEditorPage">My Roles:</h2>
+		<p class="pageEditorPage">Student 1:</p>
+		<p class="pageEditorPage"> - Presentation Page</p>
+		<p class="pageEditorPage"> - Products Page</p>
 		
-	<h2>Tasks I Completed:</h2>
-		<p>Used JavaScript to animate presentation page</p>
-		<p>Create a fully functional simple shopping cart (product page.html) using JavaScript.</p>
+	<h2 class="pageEditorPage">Tasks I Completed:</h2>
+		<p class="pageEditorPage">Used JavaScript to animate presentation page</p>
+		<p class="pageEditorPage">Create a fully functional simple shopping cart (product page.html) using JavaScript.</p>
 		
-	<h2>My Pages:</h2>
-	<p>
-		<a href="presentationPage.html">Presentation Page</a><br>
-		<a href="productPage.html">Buy products Page</a><br>
+	<h2 class="pageEditorPage">My Pages:</h2>
+	<p class="pageEditorPage">
+		<a class="pageEditorPage" href="presentationPage.html">Presentation Page</a><br>
+		<a class="pageEditorPage" href="productPage.html">Buy products Page</a><br>
 	</p>
+	
+	
+    <!--Footer-->
+    <div style="height:5px"></div>
+    <footer class="footer" id="footerId">
+        <!--Social part-->
+        <div id="socials" class="footHead line pageFooterSpace">
+            <h2>Socials</h2>
+            <p>
+                <a href="https://www.youtube.com/"><img src="images/youtube.png" alt="youtube" width="55" height="50" ></a>&nbsp;&nbsp;
+                <a href="https://www.facebook.com/"><img src="images/facebook.jpg" alt="facebook" width="55" height="50" ></a>
+            </p>
+            <p>   
+                <a href="https://www.twitter.com/"><img src= "images/twitter.png" alt="twitter" width="55" height="50"></a>&nbsp;&nbsp;
+                <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="instagram" width="55" height="50" ></a>
+            </p>
+            <div class="verticalline" id="vline"></div>
+        </div>
+        <!--End of Socials-->
+
+        <!--Pages part-->
+        <div class="footHead line pageFooterSpace">
+            <h2>Pages</h2>
+            <p>
+            <a href="mainPage.html">Main</a>&nbsp;
+            <a href="tvPage.html" style="padding-left: 25px;">Tv Page</a>&nbsp;
+            </p>
+            <p>
+            <a href="animePage.html">Anime</a>&nbsp;
+            <a href="productPage.html" style="padding-left: 15px;">Product</a>&nbsp;
+            </p>
+            <p>
+            <a href="quizPage.html">Quiz</a>&nbsp;
+            <a href="galleryPage.html" style="padding-left: 28px;">Gallery</a>&nbsp;
+            </p>
+            <a href="feedbackPage.html">Feedback</a>&nbsp;
+            <a href="aboutusPage.html">About us</a>
+        </div>
+        <!--End of Pages-->
+        
+        <!--Sitemap and Page editor buttons-->
+        <div class="footHead line pageFooterSpace">
+            <h2>Other</h2>
+                <form action="sitemapPage.html"><p><button class="sitemapButton">Sitemap</button></p></form>
+                <form action="student2.html"><p><button class="pageEditorButton">Page Editor</button></p></form>
+        </div>
+        <!--End of sitemap and page editor-->
+
+        <!--Page logo-->
+        <div class="logoFooter pageFooterSpace">
+            <img src="images/logo.png" alt="Page logo" width="650" height="290">
+        </div>
+        <!--End of page logo-->
+        
+        <!--Top button-->
+        <button onclick="topFunction()" id="topButton" class="topButton" title="Get back to the top"><img src="images/toparrow.jpg" alt="Top Arrow" width="25" height="25">Top</button>
+        <!--End of top button-->
+    
+    <script  src="javascript/external.js"></script>
+    </footer>
+    <!--End of footer-->
 </body>
 </html>
